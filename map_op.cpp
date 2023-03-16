@@ -42,3 +42,8 @@ int main() {
 
     return 0;
 }
+
+
+
+
+//refer:-https://leetcode.com/problems/top-k-frequent-elements/description/
