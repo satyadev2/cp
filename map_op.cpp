@@ -47,3 +47,18 @@ int main() {
 
 
 //refer:-https://leetcode.com/problems/top-k-frequent-elements/description/
+
+
+ vector<int> topKFrequent(vector<int>& nums, int k) {
+        map<int, int> freq_map;
+        for (auto num: nums) {
+            freq_map[num]++;
+        }
+        vector<pair<int, int>> sorted_freq = {freq_map.begin(), freq_map.end()};
+        sort(sorted_freq.begin(), sorted_freq.end(), [](auto a, auto b){ return a.second > b.second; });
+        vector<int> result;
+        for (int i = 0; i < k; i++) {
+            result.push_back(sorted_freq[i].first);
+        }
+        return result;
+    }
